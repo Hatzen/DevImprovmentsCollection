@@ -1,0 +1,56 @@
+{
+  "Name": "GitLab Close Issues with labels",
+  "CreationDate": "2020-10-9",
+  "Commands": [
+    {
+      "Command": "store",
+      "Target": "broken-bc",
+      "Value": "labelName"
+    },
+    {
+      "Command": "store",
+      "Target": "env/bc",
+      "Value": "project"
+    },
+    {
+      "Command": "store",
+      "Target": "2",
+      "Value": "skipFirst"
+    },
+    {
+      "Command": "do",
+      "Target": "",
+      "Value": ""
+    },
+    {
+      "Command": "assertElementPresent",
+      "Target": "xpath=//*[@href=\"/${project}/-/issues?label_name%5B%5D=${labelName}\"]",
+      "Value": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@href=\"/env/bc-creregrep/-/issues?label_name%5B%5D=${labelName}\"]//..//..//..//..//*[1]/*[1]/*[1]/*[1]",
+      "Value": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "waitForElementVisible // css=button.btn-close",
+      "Value": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=//*[@id=\"notes\"]/div/ul/li/div/div[3]/form/div[3]/button",
+      "Value": ""
+    },
+    {
+      "Command": "click",
+      "Target": "xpath=/html/body/div/div[2]/div[2]/nav/div/div/ul/li[3]/a",
+      "Value": ""
+    },
+    {
+      "Command": "repeatIf",
+      "Target": "true",
+      "Value": ""
+    }
+  ]
+}
